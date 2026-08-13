@@ -1,0 +1,768 @@
+/* =========================================
+   NEXTGEN HEALTHCARE
+   ABOUT PAGE
+========================================= */
+
+.about-hero {
+    position: relative;
+    padding: 85px 0 80px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(145, 82, 127, 0.10),
+            transparent 30%
+        ),
+        #faf8fa;
+}
+
+.about-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -230px;
+    bottom: -260px;
+
+    border: 1px solid rgba(145, 82, 127, 0.10);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   ABOUT HERO CONTENT
+========================================= */
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-label {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 13px;
+
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7dce4;
+
+    border-radius: 50px;
+
+    color: #91527f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.about-label span {
+    width: 6px;
+    height: 6px;
+
+    background: #91527f;
+
+    border-radius: 50%;
+}
+
+
+/* Heading */
+
+.about-hero h1 {
+    max-width: 850px;
+
+    margin: auto;
+
+    color: #171717;
+
+    font-size: clamp(44px, 6vw, 68px);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -2.8px;
+}
+
+.about-hero h1 span {
+    color: #91527f;
+}
+
+.about-hero p {
+    max-width: 650px;
+
+    margin: 23px auto 0;
+
+    color: #707078;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   WHO WE ARE
+========================================= */
+
+.who-section {
+    padding: 100px 0;
+}
+
+.who-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 75px;
+}
+
+
+/* Left Content */
+
+.who-content {
+    max-width: 570px;
+}
+
+.small-title {
+    margin-bottom: 14px;
+
+    color: #91527f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.who-content h2 {
+    margin-bottom: 22px;
+
+    color: #171717;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    line-height: 1.16;
+}
+
+.who-content h2 span {
+    color: #91527f;
+}
+
+.who-content p {
+    margin-bottom: 15px;
+
+    color: #6d6b72;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+/* About Button */
+
+.about-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding: 13px 19px;
+
+    border-radius: 7px;
+
+    background: #91527f;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.about-btn:hover {
+    background: #713d62;
+
+    transform: translateY(-2px);
+}
+
+.about-btn span {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   ABOUT LOGO CARD
+========================================= */
+
+.who-visual {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf4f8
+        );
+
+    border: 1px solid #ece6eb;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 55px rgba(55, 27, 48, 0.08);
+}
+
+
+/* Circle behind logo */
+
+.visual-glow {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border: 1px solid rgba(145, 82, 127, 0.12);
+
+    border-radius: 50%;
+}
+
+
+/* Logo */
+
+.who-visual img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 270px;
+
+    max-width: 75%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 22px;
+}
+
+
+/* Caption */
+
+.visual-caption {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.visual-caption strong {
+    color: #171717;
+
+    font-size: 16px;
+}
+
+.visual-caption span {
+    max-width: 300px;
+
+    margin-top: 5px;
+
+    color: #77747b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   PURPOSE SECTION
+========================================= */
+
+.purpose-section {
+    padding: 95px 0;
+
+    background: #faf8fa;
+}
+
+.section-heading {
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+
+    color: #171717;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+
+    line-height: 1.15;
+}
+
+.section-heading h2 span {
+    color: #91527f;
+}
+
+.section-heading p {
+    color: #77747b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   VISION + MISSION
+========================================= */
+
+.purpose-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+}
+
+.purpose-card {
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #ece6eb;
+
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.purpose-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d8bfd1;
+
+    box-shadow:
+        0 18px 45px rgba(55, 27, 48, 0.08);
+}
+
+
+/* Icon */
+
+.purpose-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f7eef5;
+
+    border-radius: 12px;
+
+    color: #91527f;
+
+    font-size: 21px;
+}
+
+.card-number {
+    color: #91527f;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+}
+
+.purpose-card h3 {
+    margin: 5px 0 9px;
+
+    color: #171717;
+
+    font-size: 21px;
+}
+
+.purpose-card p {
+    color: #77747b;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   VALUES
+========================================= */
+
+.values-section {
+    padding: 100px 0;
+}
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.value-card {
+    padding: 28px 23px;
+
+    background: #ffffff;
+
+    border: 1px solid #ece6eb;
+
+    border-radius: 14px;
+
+    transition: 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 45px rgba(55, 27, 48, 0.07);
+}
+
+.value-card > span {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #91527f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.value-card h3 {
+    margin-bottom: 8px;
+
+    color: #171717;
+
+    font-size: 18px;
+}
+
+.value-card p {
+    color: #77747b;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.about-cta {
+    padding: 30px 0 95px;
+}
+
+.cta-inner {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 52px 58px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #91527f,
+            #713d62
+        );
+
+    box-shadow:
+        0 25px 60px rgba(145, 82, 127, 0.20);
+}
+
+.cta-inner > div {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.cta-inner > div > span {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.cta-inner h2 {
+    margin: 9px 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 37px;
+
+    line-height: 1.2;
+}
+
+.cta-inner p {
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.cta-btn {
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 14px 20px;
+
+    background: #ffffff;
+
+    color: #91527f;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+
+    background: #faf5f8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .who-grid {
+        gap: 45px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-inner {
+        padding: 45px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .about-hero {
+        padding: 65px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+    .about-hero p {
+        font-size: 15px;
+    }
+
+
+    .who-section {
+        padding: 70px 0;
+    }
+
+    .who-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .who-content h2 {
+        font-size: 35px;
+    }
+
+    .who-visual {
+        min-height: 360px;
+    }
+
+    .who-visual img {
+        width: 245px;
+    }
+
+
+    .purpose-section {
+        padding: 70px 0;
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .values-section {
+        padding: 70px 0;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .cta-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 40px 28px;
+    }
+
+    .cta-inner h2 {
+        font-size: 31px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-hero h1 {
+        font-size: 39px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    .who-content h2 {
+        font-size: 31px;
+    }
+
+    .who-visual {
+        min-height: 330px;
+    }
+
+    .who-visual img {
+        width: 220px;
+    }
+
+    .purpose-card {
+        grid-template-columns: 1fr;
+
+        padding: 27px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .cta-inner h2 {
+        font-size: 28px;
+    }
+}
