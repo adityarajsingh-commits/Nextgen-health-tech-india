@@ -1,471 +1,1355 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nextgen Healthtech India - Transform your health, transform your future.">
-  <title>Nextgen Healthtech India | Transform Your Health</title>
+    <meta charset="UTF-8">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
-  <style>/* legacy styles retained below; external style.css is the optimized source of truth */
-    :root {
-      --primary: #8d4f79;
-      --primary-dark: #6e3d60;
-      --dark: #171717;
-      --text: #404047;
-      --muted: #707078;
-      --light: #faf8fa;
-      --white: #ffffff;
-      --border: #ece6eb;
-      --shadow: 0 18px 50px rgba(55, 27, 48, .10);
-    }
+    <meta name="description"
+          content="Nextgen Healthtech India - Transform your health, transform your future.">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta name="theme-color"
+          content="#8d4f79">
 
-    html { scroll-behavior: smooth; }
+    <title>
+        Nextgen Healthtech India | Transform Your Health
+    </title>
 
-    body {
-      font-family: "Inter", sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
-    }
 
-    a { text-decoration: none; color: inherit; }
+    <!-- Google Fonts -->
 
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(236,230,235,.85);
-    }
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    .navbar {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 
-    .brand img {
-      width: 122px;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      list-style: none;
-    }
+    <!-- Main CSS -->
 
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #36343a;
-      transition: .25s ease;
-    }
+    <link rel="stylesheet"
+          href="./style.css">
 
-    .nav-links a:hover { color: var(--primary); }
-
-    .nav-cta {
-      padding: 12px 20px;
-      border-radius: 8px;
-      color: var(--white) !important;
-      background: var(--primary);
-      box-shadow: 0 8px 20px rgba(141,79,121,.20);
-    }
-
-    .menu-btn {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 27px;
-      cursor: pointer;
-      color: var(--dark);
-    }
-
-    /* Hero */
-    .hero {
-      min-height: calc(100vh - 82px);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 88% 25%, rgba(141,79,121,.10), transparent 28%),
-        linear-gradient(135deg, #fff 0%, #fcf8fb 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(141,79,121,.10);
-      border-radius: 50%;
-      right: -120px;
-      bottom: -180px;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 70px;
-      align-items: center;
-      padding: 70px 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 13px;
-      border: 1px solid #e8dce6;
-      border-radius: 50px;
-      background: #fff;
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow span {
-      width: 7px;
-      height: 7px;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-
-    h1 {
-      color: var(--dark);
-      font-size: clamp(44px, 5.5vw, 72px);
-      line-height: 1.06;
-      letter-spacing: -2.8px;
-      max-width: 720px;
-      margin-bottom: 22px;
-    }
-
-    h1 .accent { color: var(--primary); }
-
-    .hero-text {
-      max-width: 600px;
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .25s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 12px 26px rgba(141,79,121,.22);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: var(--primary-dark);
-    }
-
-    .btn-outline {
-      border: 1px solid #d9ced7;
-      background: #fff;
-      color: var(--dark);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    /* Hero visual */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .visual-card {
-      width: min(460px, 100%);
-      min-height: 470px;
-      border-radius: 28px;
-      background: #fff;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 38px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .visual-card::after {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background: rgba(141,79,121,.06);
-      top: -90px;
-      right: -70px;
-    }
-
-    .hero-logo {
-      width: min(330px, 90%);
-      height: auto;
-      object-fit: contain;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 28px;
-    }
-
-    .visual-line {
-      width: 80px;
-      height: 3px;
-      border-radius: 5px;
-      background: var(--primary);
-      margin-bottom: 18px;
-    }
-
-    .visual-card h2 {
-      position: relative;
-      z-index: 1;
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      color: var(--dark);
-      text-align: center;
-    }
-
-    .visual-card p {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: var(--muted);
-      max-width: 330px;
-      margin-top: 8px;
-    }
-
-    /* Trust strip */
-    .trust-strip {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .trust-inner {
-      min-height: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .trust-inner p {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .trust-inner strong { color: var(--primary); }
-
-    /* Mobile */
-    @media (max-width: 850px) {
-      .navbar { min-height: 72px; }
-      .brand img { width: 160px; }
-      .menu-btn { display: block; }
-
-      .nav-links {
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: #fff;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 15px 30px rgba(0,0,0,.06);
-      }
-
-      .nav-links.active { display: flex; }
-
-      .nav-links li { border-top: 1px solid #f1edf0; }
-
-      .nav-links a {
-        display: block;
-        padding: 15px 5%;
-      }
-
-      .nav-cta {
-        border-radius: 0;
-        text-align: center;
-      }
-
-      .hero { min-height: auto; }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-        padding: 55px 0 70px;
-      }
-
-      h1 {
-        font-size: clamp(42px, 12vw, 60px);
-        letter-spacing: -2px;
-      }
-
-      .hero-text { font-size: 16px; }
-
-      .visual-card {
-        min-height: 390px;
-        padding: 28px;
-      }
-
-      .hero-logo { width: 280px; }
-    }
-
-    @media (max-width: 480px) {
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-      .visual-card { min-height: 350px; }
-    }
-  </style>
-  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-  <header>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
     <div class="container navbar">
-      <a href="#" class="brand" aria-label="Nextgen Healthtech India Home">
-        <img src="nextgen-logo.jpeg" alt="Nextgen Healthtech India Logo">
-      </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
-        ☰
-      </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-      </ul>
+        <!-- LOGO -->
+
+        <a href="#home"
+           class="brand"
+           aria-label="Nextgen Healthtech India">
+
+            <img
+                src="./nextgen-logo.jpeg"
+                alt="Nextgen Healthtech India Logo">
+
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-links"
+                id="navLinks">
+
+                <li>
+                    <a href="#home"
+                       class="active">
+
+                        Home
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#about">
+
+                        About
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#services">
+
+                        Services
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#contact"
+                       class="nav-cta">
+
+                        Contact Us
+                        <span>→</span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
     </div>
-  </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+    id="home"
+    class="hero">
+
+
+    <div class="hero-orb hero-orb-one"></div>
+
+    <div class="hero-orb hero-orb-two"></div>
+
+
+    <div class="container hero-grid">
+
+
+        <!-- HERO CONTENT -->
 
         <div class="hero-content">
-          <div class="eyebrow">
-            <span></span>
-            Next Generation Healthcare
-          </div>
 
-          <h1>
-            Transform your <span class="accent">health,</span><br>
-            transform your future.
-          </h1>
 
-          <p class="hero-text">
-            Nextgen Healthtech India is focused on building a smarter,
-            more accessible and future-ready healthcare experience through
-            innovation, technology and people-first solutions.
-          </p>
+            <div class="eyebrow">
 
-          <div class="hero-actions">
-            <a href="services.html" class="btn btn-primary">Explore Our Services</a>
-            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
-          </div>
+                <span class="status-dot"></span>
+
+                Next Generation Healthcare
+
+            </div>
+
+
+            <h1>
+
+                Transform your
+                <span>health,</span>
+
+                <br>
+
+                transform your future.
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                Nextgen Healthtech India is focused on building
+                a smarter, more accessible and future-ready
+                healthcare experience through innovation,
+                technology and people-first solutions.
+
+            </p>
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-actions">
+
+
+                <a
+                    href="#services"
+                    class="btn btn-primary">
+
+                    Explore Services
+                    <span>→</span>
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline">
+
+                    Get in Touch
+
+                </a>
+
+            </div>
+
+
+            <!-- TRUST -->
+
+            <div class="hero-trust">
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        People-first
+                    </strong>
+
+                    <span>
+                        Healthcare approach
+                    </span>
+
+                </div>
+
+
+                <div class="trust-divider"></div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        Future-ready
+                    </strong>
+
+                    <span>
+                        Technology mindset
+                    </span>
+
+                </div>
+
+            </div>
+
+
         </div>
+
+
+        <!-- HERO VISUAL -->
 
         <div class="hero-visual">
-          <div class="visual-card">
-            <img src="nextgen-logo.jpeg"
-                 alt="Nextgen Healthtech India"
-                 class="hero-logo">
 
-            <div class="visual-line"></div>
 
-            <h2>Healthcare. Reimagined.</h2>
-            <p>
-              Technology-driven solutions designed around better health
-              and a better future.
-            </p>
-          </div>
+            <div class="visual-backdrop"></div>
+
+
+            <div class="visual-card">
+
+
+                <div class="card-top">
+
+                    <span>
+                        NEXTGEN
+                    </span>
+
+                    <span class="card-dot"></span>
+
+                </div>
+
+
+                <div class="logo-wrap">
+
+                    <img
+                        src="./nextgen-logo.jpeg"
+                        alt="Nextgen Healthtech India"
+                        class="hero-logo">
+
+                </div>
+
+
+                <div class="visual-line"></div>
+
+
+                <h2>
+                    Healthcare. Reimagined.
+                </h2>
+
+
+                <p>
+
+                    Technology-driven thinking designed around
+                    better health and a better future.
+
+                </p>
+
+
+                <div class="visual-bottom">
+
+                    <span>
+                        Innovation
+                    </span>
+
+                    <span>
+                        Technology
+                    </span>
+
+                    <span>
+                        People
+                    </span>
+
+                </div>
+
+
+            </div>
+
         </div>
 
-      </div>
-    </section>
+    </div>
 
-    <section class="trust-strip">
-      <div class="container trust-inner">
-        <p>
-          <strong>Nextgen Healthtech India</strong> —
-          Transform your health, transform your future.
+</section>
+
+
+
+<!-- =====================================================
+     QUICK FEATURES
+===================================================== -->
+
+<section class="quick-strip">
+
+
+    <div class="container quick-grid">
+
+
+        <div class="quick-item">
+
+            <span class="quick-icon">
+                ✦
+            </span>
+
+            <div>
+
+                <strong>
+                    Innovation-led
+                </strong>
+
+                <small>
+                    New ideas for healthcare
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="quick-item">
+
+            <span class="quick-icon">
+                ◎
+            </span>
+
+            <div>
+
+                <strong>
+                    People-focused
+                </strong>
+
+                <small>
+                    Designed around real needs
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="quick-item">
+
+            <span class="quick-icon">
+                ↗
+            </span>
+
+            <div>
+
+                <strong>
+                    Future-ready
+                </strong>
+
+                <small>
+                    Built for tomorrow
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="about-section">
+
+
+    <div class="container">
+
+
+        <div class="single-section-content">
+
+
+            <span class="section-kicker">
+
+                WHO WE ARE
+
+            </span>
+
+
+            <h2>
+
+                Healthcare,
+                <span>
+                    reimagined.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Nextgen Healthtech India represents a new
+                approach to healthcare where technology,
+                innovation and human needs come together.
+
+            </p>
+
+
+            <p>
+
+                Our goal is to contribute towards a healthcare
+                ecosystem that is smarter, simpler and more
+                accessible for individuals and communities.
+
+            </p>
+
+
+            <p>
+
+                We believe the future of healthcare should focus
+                not only on treatment, but also on awareness,
+                prevention, accessibility and better experiences.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    id="services"
+    class="services-preview">
+
+
+    <div class="container">
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="section-heading">
+
+
+            <span class="section-kicker">
+
+                WHAT WE DO
+
+            </span>
+
+
+            <h2>
+
+                Healthcare solutions,
+                <span>
+                    built differently.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Innovative and people-focused solutions
+                designed for the future of healthcare.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- SERVICES GRID -->
+
+        <div class="service-preview-grid">
+
+
+            <!-- SERVICE 01 -->
+
+            <article
+                class="service-mini featured">
+
+
+                <span class="mini-number">
+                    01
+                </span>
+
+
+                <div class="mini-icon">
+                    +
+                </div>
+
+
+                <h3>
+                    Healthcare Solutions
+                </h3>
+
+
+                <p>
+
+                    Practical healthcare solutions focused
+                    on accessibility, efficiency and better
+                    healthcare experiences.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- SERVICE 02 -->
+
+            <article
+                class="service-mini">
+
+
+                <span class="mini-number">
+                    02
+                </span>
+
+
+                <div class="mini-icon">
+                    ◈
+                </div>
+
+
+                <h3>
+                    Health Technology
+                </h3>
+
+
+                <p>
+
+                    Technology-led approaches for smarter,
+                    connected and future-ready healthcare.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- SERVICE 03 -->
+
+            <article
+                class="service-mini">
+
+
+                <span class="mini-number">
+                    03
+                </span>
+
+
+                <div class="mini-icon">
+                    ✦
+                </div>
+
+
+                <h3>
+                    Digital Health
+                </h3>
+
+
+                <p>
+
+                    Digital experiences designed to make
+                    healthcare information easier to access
+                    and understand.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- SERVICE 04 -->
+
+            <article
+                class="service-mini">
+
+
+                <span class="mini-number">
+                    04
+                </span>
+
+
+                <div class="mini-icon">
+                    ♡
+                </div>
+
+
+                <h3>
+                    Health Awareness
+                </h3>
+
+
+                <p>
+
+                    Promoting awareness and better
+                    understanding of health and wellness.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- SERVICE 05 -->
+
+            <article
+                class="service-mini">
+
+
+                <span class="mini-number">
+                    05
+                </span>
+
+
+                <div class="mini-icon">
+                    ◎
+                </div>
+
+
+                <h3>
+                    Healthcare Innovation
+                </h3>
+
+
+                <p>
+
+                    Exploring new ideas and approaches
+                    that can shape tomorrow's healthcare.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- SERVICE 06 -->
+
+            <article
+                class="service-mini">
+
+
+                <span class="mini-number">
+                    06
+                </span>
+
+
+                <div class="mini-icon">
+                    ↗
+                </div>
+
+
+                <h3>
+                    Future Healthcare
+                </h3>
+
+
+                <p>
+
+                    Building a future-ready healthcare
+                    ecosystem through innovation and
+                    technology.
+
+                </p>
+
+
+                <a
+                    href="#contact"
+                    class="service-link">
+
+                    Explore Service
+                    <span>→</span>
+
+                </a>
+
+
+            </article>
+
+
+        </div>
+
+
+        <div class="center-action">
+
+            <a
+                href="#contact"
+                class="btn btn-outline">
+
+                Discuss Your Requirement
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISION & MISSION
+===================================================== -->
+
+<section class="vm-section">
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <span class="section-kicker">
+
+                OUR PURPOSE
+
+            </span>
+
+
+            <h2>
+
+                Driven by a
+                <span>
+                    meaningful purpose.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Building a healthcare future that is
+                innovative, accessible and human-centred.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="vm-grid">
+
+
+            <!-- VISION -->
+
+            <article class="vm-card">
+
+
+                <span class="card-number">
+                    01
+                </span>
+
+
+                <div class="vm-icon">
+                    ◈
+                </div>
+
+
+                <h3>
+                    Our Vision
+                </h3>
+
+
+                <p>
+
+                    To contribute to a future where technology
+                    and healthcare work together to create
+                    better health outcomes and improved quality
+                    of life.
+
+                </p>
+
+
+                <div class="card-line"></div>
+
+
+            </article>
+
+
+
+            <!-- MISSION -->
+
+            <article class="vm-card">
+
+
+                <span class="card-number">
+                    02
+                </span>
+
+
+                <div class="vm-icon">
+                    ✦
+                </div>
+
+
+                <h3>
+                    Our Mission
+                </h3>
+
+
+                <p>
+
+                    To develop meaningful healthcare solutions
+                    that combine innovation, accessibility,
+                    technology and a strong commitment to people.
+
+                </p>
+
+
+                <div class="card-line"></div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="values-section">
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <span class="section-kicker">
+
+                OUR VALUES
+
+            </span>
+
+
+            <h2>
+
+                What we
+                <span>
+                    believe.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Simple principles that guide the way
+                we think, build and create.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+            <!-- VALUE 01 -->
+
+            <article class="value-card">
+
+
+                <div class="value-top">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+                        ✦
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Innovation
+                </h3>
+
+
+                <p>
+
+                    Exploring better ideas and smarter ways
+                    to improve healthcare experiences.
+
+                </p>
+
+
+            </article>
+
+
+
+            <!-- VALUE 02 -->
+
+            <article class="value-card">
+
+
+                <div class="value-top">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+                        ◎
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Accessibility
+                </h3>
+
+
+                <p>
+
+                    Working towards healthcare solutions
+                    that are easier to understand and access.
+
+                </p>
+
+
+            </article>
+
+
+
+            <!-- VALUE 03 -->
+
+            <article class="value-card">
+
+
+                <div class="value-top">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+                        ♡
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    People First
+                </h3>
+
+
+                <p>
+
+                    Keeping individuals and their needs
+                    at the centre of our approach.
+
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="home-cta">
+
+
+    <div class="container">
+
+
+        <div class="cta-box">
+
+
+            <div>
+
+
+                <span class="cta-kicker">
+
+                    NEXTGEN HEALTHCARE
+
+                </span>
+
+
+                <h2>
+
+                    Let's transform
+                    healthcare together.
+
+                </h2>
+
+
+                <p>
+
+                    Have an idea, requirement or healthcare
+                    challenge? Start a conversation with
+                    Nextgen Healthtech India.
+
+                </p>
+
+
+                <div class="cta-actions">
+
+
+                    <!-- CHANGE EMAIL HERE -->
+
+                    <a
+                        href="mailto:info@nextgenhealthtechindia.com"
+                        class="cta-button">
+
+                        Email Us
+                        <span>→</span>
+
+                    </a>
+
+
+                    <!-- CHANGE NUMBER HERE -->
+
+                    <a
+                        href="tel:+918429008066"
+                        class="cta-button">
+
+                        Call Us
+                        <span>→</span>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+
+        <div>
+
+            <strong>
+                Nextgen Healthtech India
+            </strong>
+
+            <p>
+                Transform your health, transform your future.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+
+            © 2026 Nextgen Healthtech India.
+            All rights reserved.
+
         </p>
-      </div>
-    </section>
-  </main>
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* MOBILE MENU */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
 
     menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      menuBtn.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+
+        const isOpen =
+            navLinks.classList.toggle("active");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        menuBtn.textContent =
+            isOpen ? "✕" : "☰";
+
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        menuBtn.textContent = "☰";
-      });
-    });
-  </script>
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuBtn.textContent = "☰";
+
+            });
+
+        });
+
+
+
+    /* ACTIVE NAVIGATION */
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+
+    const navItems =
+        document.querySelectorAll(
+            ".nav-links a:not(.nav-cta)"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 130;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+                    current =
+                        section.getAttribute("id");
+                }
+
+            });
+
+
+            navItems.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+        }
+    );
+
+
+</script>
+
 
 </body>
+
 </html>
