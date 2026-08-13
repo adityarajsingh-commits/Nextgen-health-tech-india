@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nextgen Healthtech India - Transform your health, transform your future.">
+  <title>Nextgen Healthtech India | Transform Your Health</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #8d4f79;
+      --primary-dark: #6e3d60;
+      --dark: #171717;
+      --text: #404047;
+      --muted: #707078;
+      --light: #faf8fa;
+      --white: #ffffff;
+      --border: #ece6eb;
+      --shadow: 0 18px 50px rgba(55, 27, 48, .10);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(236,230,235,.85);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand img {
+      width: 185px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #36343a;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: var(--white) !important;
+      background: var(--primary);
+      box-shadow: 0 8px 20px rgba(141,79,121,.20);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 82px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 25%, rgba(141,79,121,.10), transparent 28%),
+        linear-gradient(135deg, #fff 0%, #fcf8fb 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(141,79,121,.10);
+      border-radius: 50%;
+      right: -120px;
+      bottom: -180px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid #e8dce6;
+      border-radius: 50px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(44px, 5.5vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -2.8px;
+      max-width: 720px;
+      margin-bottom: 22px;
+    }
+
+    h1 .accent { color: var(--primary); }
+
+    .hero-text {
+      max-width: 600px;
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(141,79,121,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid #d9ced7;
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .visual-card {
+      width: min(460px, 100%);
+      min-height: 470px;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(141,79,121,.06);
+      top: -90px;
+      right: -70px;
+    }
+
+    .hero-logo {
+      width: min(330px, 90%);
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 28px;
+    }
+
+    .visual-line {
+      width: 80px;
+      height: 3px;
+      border-radius: 5px;
+      background: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .visual-card h2 {
+      position: relative;
+      z-index: 1;
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .visual-card p {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--muted);
+      max-width: 330px;
+      margin-top: 8px;
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .trust-inner {
+      min-height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .trust-inner p {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-inner strong { color: var(--primary); }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+      .navbar { min-height: 72px; }
+      .brand img { width: 160px; }
+      .menu-btn { display: block; }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(0,0,0,.06);
+      }
+
+      .nav-links.active { display: flex; }
+
+      .nav-links li { border-top: 1px solid #f1edf0; }
+
+      .nav-links a {
+        display: block;
+        padding: 15px 5%;
+      }
+
+      .nav-cta {
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .hero { min-height: auto; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 55px 0 70px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 60px);
+        letter-spacing: -2px;
+      }
+
+      .hero-text { font-size: 16px; }
+
+      .visual-card {
+        min-height: 390px;
+        padding: 28px;
+      }
+
+      .hero-logo { width: 280px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .visual-card { min-height: 350px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Nextgen Healthtech India Home">
+        <img src="nextgen-logo.jpeg" alt="Nextgen Healthtech India Logo">
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span></span>
+            Next Generation Healthcare
+          </div>
+
+          <h1>
+            Transform your <span class="accent">health,</span><br>
+            transform your future.
+          </h1>
+
+          <p class="hero-text">
+            Nextgen Healthtech India is focused on building a smarter,
+            more accessible and future-ready healthcare experience through
+            innovation, technology and people-first solutions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Explore Our Services</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card">
+            <img src="nextgen-logo.jpeg"
+                 alt="Nextgen Healthtech India"
+                 class="hero-logo">
+
+            <div class="visual-line"></div>
+
+            <h2>Healthcare. Reimagined.</h2>
+            <p>
+              Technology-driven solutions designed around better health
+              and a better future.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <p>
+          <strong>Nextgen Healthtech India</strong> —
+          Transform your health, transform your future.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+  </script>
+
+</body>
+</html>
